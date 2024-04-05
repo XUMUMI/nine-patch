@@ -204,7 +204,7 @@ function getPadding(context) {
  */
 function paddingSizeData2PaddingSize(paddingSizeData) {
   const ret = [undefined, undefined]
-  switch (paddingSizeData.length) {
+  switch (paddingSizeData?.length) {
     case 1:
       if (paddingSizeData[0] > 0) {
         ret[0] = 0
@@ -254,6 +254,7 @@ function getPatchSize(rawData) {
       if ((ret[patchIndex] > 0) !== isStretch) ret[++patchIndex] = 0
       ret[patchIndex] += isStretch ? 1 : -1
     }
+    if(1 === ret?.length && 0 >= ret[0]) ret = undefined
   }
   return ret
 }
