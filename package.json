@@ -1,6 +1,8 @@
 {
-  "name": "nine-patch",
-  "version": "1.1.1",
+  "name": "@xumumi/nine-patch",
+  "version": "2.0.0",
+  "description": "A simple nine-patch image reader for javascript.",
+  "main": "nine-patch.js",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -9,6 +11,14 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XUMUMI/nine-patch.git"
+  },
+  "keywords": [
+    "nine-patch",
+    "9-patch"
+  ],
   "dependencies": {
     "vue": "^3.3.4"
   },
@@ -20,5 +30,11 @@
     "eslint-plugin-vue": "^9.17.0",
     "prettier": "^3.0.3",
     "vite": "^4.4.11"
-  }
+  },
+  "author": "xumumi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XUMUMI/nine-patch/issues"
+  },
+  "homepage": "https://github.com/XUMUMI/nine-patch#readme"
 }

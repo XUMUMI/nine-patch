@@ -1,4 +1,4 @@
-import { draw9PatchImage } from './nine-patch.js'
+import { NinePatch } from '/nine-patch'
 
 export default {
   data() {
@@ -9,14 +9,16 @@ export default {
       startY: 0,
       startWidth: 0,
       startHeight: 0,
-      showContent: false
+      showContent: false,
+      ninePatch: undefined
     }
   },
   mounted() {
     document.addEventListener('mousedown', this.mouseDown)
     document.addEventListener('mousemove', this.mouseMove)
     document.addEventListener('mouseup', this.mouseUp)
-    draw9PatchImage(this.$refs['nine-patch'], this.url).then();
+    this.ninePatch = new NinePatch(this.url);
+    this.ninePatch.init().then(() => this.ninePatch.draw(this.$refs['nine-patch']))
   },
   methods: {
     mouseDown(e) {
@@ -36,7 +38,7 @@ export default {
         const height = this.startHeight + e.clientY - this.startY;
         element.style.width = width + 'px';
         element.style.height = height + 'px';
-        draw9PatchImage(element, this.url).then()
+        this.ninePatch.draw(this.$refs['nine-patch'])
       }
     },
     mouseUp() {
