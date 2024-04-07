@@ -21,10 +21,12 @@ import { NinePatch } from '@xumumi/nine-patch'
 
 const ninePatch = new NinePatch(url);
 ninePatch.init().then(() => {
-  const base64 = ninePatch.toBase64();
+  const base64 = ninePatch.getBase64(width, height);
   // do something with the base64 data
 })
 ```
+width: The width of the image.
+height: The height of the image.
 
 You do not need to repeatedly call the init method to draw the image on multiple elements.
 ```javascript
