@@ -57,6 +57,8 @@ npm run dev
 ```
 Then open the browser and visit `http://localhost:5173`.
 
+Or you can visit the [demo](https://codepen.io/XUMUMI/full/bGJMvqJ).
+
 ## Reference
 - [Android 9-patch image](https://developer.android.com/guide/topics/graphics/drawables#nine-patch)
 
