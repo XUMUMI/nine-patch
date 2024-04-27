@@ -1,2 +1,2 @@
-import NinePatch from './lib/nine-patch.min.js';
+import NinePatch from './lib/nine-patch.js';
 export default NinePatch
