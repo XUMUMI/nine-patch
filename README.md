@@ -7,7 +7,7 @@ Then you must create a new instance of the NinePatch class and call the init met
 After the image is loaded, you can call the draw method to draw the image on the element.
 Init method will return a promise, you can use the then method to do something after the image is loaded.
 ```javascript
-import { NinePatch } from '@xumumi/nine-patch'
+import NinePatch from '@xumumi/nine-patch'
 
 const ninePatch = new NinePatch(url);
 ninePatch.init().then(() => this.ninePatch.draw(element))
@@ -17,7 +17,7 @@ url: The url of the nine-patch image.
 
 if you want to get the image base64 data, you can use the following code:
 ```javascript
-import { NinePatch } from '@xumumi/nine-patch'
+import NinePatch from '@xumumi/nine-patch'
 
 const ninePatch = new NinePatch(url);
 ninePatch.init().then(() => {
@@ -30,7 +30,7 @@ height: The height of the image.
 
 You do not need to repeatedly call the init method to draw the image on multiple elements.
 ```javascript
-import { NinePatch } from '@xumumi/nine-patch'
+import NinePatch  from '@xumumi/nine-patch'
 const ninePatch = new NinePatch(url);
 await ninePatch.init();
 ninePatch.draw(element1);
@@ -47,6 +47,11 @@ function onResize() {
 ## Install
 ```bash
 npm i @xumumi/nine-patch
+```
+
+## CDN
+```html
+<script src="https://unpkg.com/@xumumi/nine-patch/lib/nine-patch.min.js"></script>
 ```
 
 ## Example
