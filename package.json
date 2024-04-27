@@ -1,6 +1,6 @@
 {
   "name": "@xumumi/nine-patch",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A simple nine-patch image reader for javascript.",
   "main": "index.js",
   "type": "module",
