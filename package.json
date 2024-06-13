@@ -1,12 +1,13 @@
 {
   "name": "@xumumi/nine-patch",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "A simple nine-patch image reader for javascript.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./sandbox/server.js"
+    "build": "rollup -c",
+    "dev": "node ./sandbox/server.js",
+    "lint": "eslint *.js src/**/*.js sandbox/**/*.js --fix"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,22 @@
   "bugs": {
     "url": "https://github.com/XUMUMI/nine-patch/issues"
   },
-  "homepage": "https://github.com/XUMUMI/nine-patch#readme"
+  "homepage": "https://github.com/XUMUMI/nine-patch#readme",
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@eslint/js": "^9.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^9.4.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.2.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "globals": "^15.4.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
 }
