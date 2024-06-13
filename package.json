@@ -1,12 +1,12 @@
 {
   "name": "@xumumi/nine-patch",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A simple nine-patch image reader for javascript.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "build": "rollup -c",
-    "dev": "node ./sandbox/server.js",
+    "dev": "npm run build && rollup -c && node ./sandbox/server.js",
     "lint": "eslint *.js src/**/*.js sandbox/**/*.js --fix"
   },
   "repository": {

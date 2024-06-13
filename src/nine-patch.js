@@ -32,8 +32,12 @@ export default class NinePatch {
 
       /* 计算原图中，不会被拉伸的宽高长度，即为固定的长度
       *  In the original image, the width and height length that will not be stretched is the fixed length */
-      this._fixWidth = this._horizontalPatch.reduce((acc, cur) => acc + (cur < 0 ? -cur : 0), 0);
-      this._fixHeight = this._verticalPatch.reduce((acc, cur) => acc + (cur < 0 ? -cur : 0), 0);
+      this._fixWidth = this._horizontalPatch.reduce((acc, cur) => {
+        return acc + (cur < 0 ? -cur : 0);
+      }, 0);
+      this._fixHeight = this._verticalPatch.reduce((acc, cur) => {
+        return acc + (cur < 0 ? -cur : 0);
+      }, 0);
 
       this._padding = getPadding(this._rawContext);
     }
@@ -47,16 +51,18 @@ export default class NinePatch {
    */
   draw(element) {
     if (this._padding[0] || this._padding[1] || this._padding[2] || this._padding[3]) {
+      element.style.boxSizing = "border-box";
       if (this._padding[0]) element.style.paddingTop = `${this._padding[0]}px`;
       if (this._padding[1]) element.style.paddingRight = `${this._padding[1]}px`;
       if (this._padding[2]) element.style.paddingBottom = `${this._padding[2]}px`;
       if (this._padding[3]) element.style.paddingLeft = `${this._padding[3]}px`;
     }
+
     const width = element.clientWidth;
     const height = element.clientHeight;
     const base64 = this.getBase64(width, height);
+
     if (base64) {
-      element.style.boxSizing = "border-box";
       element.style.backgroundSize = `${width}px ${height}px`;
       element.style.backgroundRepeat = "no-repeat";
       element.style.backgroundImage = `url('${this.getBase64(width, height)}')`;
@@ -197,7 +203,10 @@ function getPadding(context) {
   const leftAndRightPaddingPixelData = context.getImageData(1, context.canvas.height - 1, context.canvas.width - 2, 1).data;
   const leftAndRightPaddingSizeData = getPatchSize(leftAndRightPaddingPixelData);
   const leftAndRight = paddingSizeData2PaddingSize(leftAndRightPaddingSizeData);
-  return [upAndDown[0], leftAndRight[1], upAndDown[1], leftAndRight[0]];
+  return [upAndDown[0],
+    leftAndRight[1],
+    upAndDown[1],
+    leftAndRight[0]];
 }
 
 /**

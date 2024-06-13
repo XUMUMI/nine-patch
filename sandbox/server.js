@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
   pipeFileToResponse(res, pathname === "/index" ? "../index.js" : pathname);
 });
 
-server.listen(0, () => console.log(`Server running at http://localhost:${server.address().port}/`)).on("error", err => console.error("Server error:", err));
+server.listen(0, () => {return console.log(`Server running at http://localhost:${server.address().port}/`);}).on("error", err => {return console.error("Server error:", err);});
 
 function pipeFileToResponse(res, file) {
   let filePath = getFilePath("sandbox", file === "/" ? "index.html" : file);
@@ -19,7 +19,7 @@ function pipeFileToResponse(res, file) {
   }
 }
 
-const getFilePath = (root, file) => path.join(path.resolve(), root, file);
+const getFilePath = (root, file) => {return path.join(path.resolve(), root, file);};
 
 function getMimeType(file) {
   const extname = path.extname(file);

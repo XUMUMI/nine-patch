@@ -5,7 +5,7 @@ const imageUrl = "./assets/images/test.9.png";
 const element = document.getElementById("nine-patch");
 const ninePatch = new NinePatch(imageUrl);
 
-ninePatch.init().then(() => ninePatch.draw(element));
+ninePatch.init().then(() => {return ninePatch.draw(element);});
 
 initContentToggle();
 initResize();
@@ -13,7 +13,7 @@ initResize();
 function initContentToggle() {
   const checkbox = document.getElementById("checkbox");
   const content = document.getElementById("content");
-  checkbox.addEventListener("change", (e) => content.style.display = e.target.checked ? "block" : "none");
+  checkbox.addEventListener("change", (e) => {return content.style.display = e.target.checked ? "block" : "none";});
 }
 
 function initResize() {
@@ -32,6 +32,6 @@ function initResize() {
       ninePatch.draw(element);
     }
   });
-  document.addEventListener("mouseup", () => mouseDown = false);
-  document.addEventListener("mouseleave", () => mouseDown = false);
+  document.addEventListener("mouseup", () => {return mouseDown = false;});
+  document.addEventListener("mouseleave", () => {return mouseDown = false;});
 }
