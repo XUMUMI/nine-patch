@@ -60,7 +60,7 @@ Clone the repository and run the following commands:
 npm install
 npm run dev
 ```
-Then open the browser and visit `http://localhost:5173`.
+Then open the browser and visit the url which is displayed in the console.
 
 Or you can visit the [demo](https://codepen.io/XUMUMI/full/bGJMvqJ).
 
