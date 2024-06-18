@@ -39,7 +39,7 @@
     }
   }
   function _createClass(e, r, t) {
-    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+    return r && _defineProperties(e.prototype, r), Object.defineProperty(e, "prototype", {
       writable: !1
     }), e;
   }
@@ -348,11 +348,11 @@
     if ("object" != typeof t || !t) return t;
     var e = t[Symbol.toPrimitive];
     if (void 0 !== e) {
-      var i = e.call(t, r || "default");
+      var i = e.call(t, r );
       if ("object" != typeof i) return i;
       throw new TypeError("@@toPrimitive must return a primitive value.");
     }
-    return ("string" === r ? String : Number)(t);
+    return (String )(t);
   }
   function _toPropertyKey(t) {
     var i = _toPrimitive(t, "string");
@@ -431,13 +431,12 @@
     }, {
       key: "draw",
       value: function draw(element) {
-        if (this._padding[0] || this._padding[1] || this._padding[2] || this._padding[3]) {
-          element.style.boxSizing = "border-box";
-          if (this._padding[0]) element.style.paddingTop = "".concat(this._padding[0], "px");
-          if (this._padding[1]) element.style.paddingRight = "".concat(this._padding[1], "px");
-          if (this._padding[2]) element.style.paddingBottom = "".concat(this._padding[2], "px");
-          if (this._padding[3]) element.style.paddingLeft = "".concat(this._padding[3], "px");
-        }
+        var _this$_padding, _this$_padding2, _this$_padding3, _this$_padding4;
+        element.style.boxSizing = "border-box";
+        if ((_this$_padding = this._padding) !== null && _this$_padding !== void 0 && _this$_padding[0]) element.style.paddingTop = "".concat(this._padding[0], "px");
+        if ((_this$_padding2 = this._padding) !== null && _this$_padding2 !== void 0 && _this$_padding2[1]) element.style.paddingRight = "".concat(this._padding[1], "px");
+        if ((_this$_padding3 = this._padding) !== null && _this$_padding3 !== void 0 && _this$_padding3[2]) element.style.paddingBottom = "".concat(this._padding[2], "px");
+        if ((_this$_padding4 = this._padding) !== null && _this$_padding4 !== void 0 && _this$_padding4[3]) element.style.paddingLeft = "".concat(this._padding[3], "px");
         var width = element.clientWidth;
         var height = element.clientHeight;
         var base64 = this.getBase64(width, height);

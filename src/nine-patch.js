@@ -50,13 +50,11 @@ export default class NinePatch {
    * @returns base64
    */
   draw(element) {
-    if (this._padding[0] || this._padding[1] || this._padding[2] || this._padding[3]) {
-      element.style.boxSizing = "border-box";
-      if (this._padding[0]) element.style.paddingTop = `${this._padding[0]}px`;
-      if (this._padding[1]) element.style.paddingRight = `${this._padding[1]}px`;
-      if (this._padding[2]) element.style.paddingBottom = `${this._padding[2]}px`;
-      if (this._padding[3]) element.style.paddingLeft = `${this._padding[3]}px`;
-    }
+    element.style.boxSizing = "border-box";
+    if (this._padding?.[0]) element.style.paddingTop = `${this._padding[0]}px`;
+    if (this._padding?.[1]) element.style.paddingRight = `${this._padding[1]}px`;
+    if (this._padding?.[2]) element.style.paddingBottom = `${this._padding[2]}px`;
+    if (this._padding?.[3]) element.style.paddingLeft = `${this._padding[3]}px`;
 
     const width = element.clientWidth;
     const height = element.clientHeight;
